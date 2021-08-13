@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script src = 'https://code.jquery.com/jquery-3.4.1.min.js'></script>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div id="main">
+      <input id="unixtime" type="text" width="20%" readonly></input><input id="data" type="text" width="80%" autofocus></input>
+      <textarea rows='15' cols='60' readonly></textarea>
+    </div>
+  </body>
+</html>
+<script>
+  var intervalId = setInterval(function(){
+    var ts = Math.round((new Date()).getTime() / 1000); // time in seconds
+    $('#unixtime').val(ts);
+  }, 1000);
+  
+  var keys = {};
+
+  $(document).ready(function() {
+    var ts = Math.round((new Date()).getTime() / 1000); // time in seconds
+    $('#unixtime').val(ts);
+  });
+
+  $(document).keydown(function (e) {
+    keys[e.which] = true;
+    
+    if(keys[16] == true && e.which == 13){ // shift+enter
+      e.preventDefault();
+      var time = $('#unixtime');
+      var input = $('#data');
+      var noneditableInput = $('textarea');
+      noneditableInput.val(time.val() + "\t" + input.val() + '\n' + noneditableInput.val());
+      input.val("");
+      //input[0].setSelectionRange(0,0);
+    } else if(e.which == 13) { // enter
+      e.preventDefault();
+      var noneditableInput = $('textarea');
+      noneditableInput.val('\n' + noneditableInput.val());
+    }
+  });
+
+  $(document).keyup(function (e) {
+    delete keys[e.which];
+  });
+</script>
