@@ -14,27 +14,20 @@ body {
 input{
   border: none;
   outline: none;
-}
-
-#unixTimestamp {
-  width: 12%;
-}
-
-#dateTimestamp {
-  width: 20%;
-}
-
-.uTimestamp, .dTimestamp {
-  color: grey;
-  font-family: Arial;
+  font-family: Courier New;
   font-size: 13px;
 }
 
-textarea {
-  width: 100%;
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: Arial;
+#unixTimestamp {
+  width: 13%;
+}
+
+#dateTimestamp {
+  width: 24%;
+}
+
+.uTimestamp, .dTimestamp, td {
   color: grey;
+  font-family: Courier New;
+  font-size: 13px;
 }
