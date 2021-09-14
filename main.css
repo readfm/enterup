@@ -7,19 +7,27 @@ body {
   border: solid;
   border-width: thin;
   width: 650px;
+  height: 400px;
   margin: 10px;
 }
 
 input{
   border: none;
   outline: none;
-  font-family: Arial;
-  width: 86%;
 }
 
-#unixtime {
+#unixTimestamp {
+  width: 12%;
+}
+
+#dateTimestamp {
+  width: 20%;
+}
+
+.uTimestamp, .dTimestamp {
   color: grey;
-  width: 14%;
+  font-family: Arial;
+  font-size: 13px;
 }
 
 textarea {
