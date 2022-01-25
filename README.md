@@ -12,4 +12,4 @@ A) own memory in one "1" single stream
 
 B) save (A) offline in one "1" place     
 
-C) find/process memory easier      
+C) find/process own data in own memory       
